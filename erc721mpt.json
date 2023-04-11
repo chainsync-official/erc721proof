@@ -1,0 +1,1019 @@
+{
+  "root": "598999a7f0e1f8dbb6059cb16d8adaf43657a1448fc88f095421833fe8b800df",
+  "leafs": [
+    {
+      "key": "0xb7f7f6c52f2e2fdb1963eab30438024864c313f6",
+      "value": "0xbd9bd09d1584a5193852c403235de0716428c9472752ee9b9ea8a28a00789142"
+    },
+    {
+      "key": "0xed5af388653567af2f388e6224dc7c4b3241c544",
+      "value": "0x0d10b90934aad9277d83697acf9c0865b21c225dda4fb21ca13ff00965a9f108"
+    },
+    {
+      "key": "0x60e4d786628fea6478f785a6d7e704777c86a7c6",
+      "value": "0xd5e45d38b326ed543b36a1a4a67c16e307352d589b16903a3f93fda3ea531d68"
+    },
+    {
+      "key": "0x6ca10bc06de5af062cfd1dedde85b46ef43ec8d3",
+      "value": "0x56426c5289f2493adfd3b5ae0339a633bf56b6546e9d637a1ec20e7e7130767b"
+    },
+    {
+      "key": "0xd774557b647330c91bf44cfeab205095f7e6c367",
+      "value": "0xbf4cff210f4d16cbbeeb258689197f52ffd53444d68f4bf233de07455772d87c"
+    },
+    {
+      "key": "0x34d85c9cdeb23fa97cb08333b511ac86e1c4e258",
+      "value": "0x96eba5bde9ed753d9e4a76dbbd8e6030251b7aaf6acaba91c3506a0690e8b817"
+    },
+    {
+      "key": "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
+      "value": "0x7ed4a8f9a5a2ae687efafdf17f70b1ad4d004d3de2a6fd271232868996ca4d3f"
+    },
+    {
+      "key": "0x5b1085136a811e55b2bb2ca1ea456ba82126a376",
+      "value": "0x2d557367cd4ecb3c8fa77a596ef77c671c5434dc335997e34c5479bfe8df2a39"
+    },
+    {
+      "key": "0xba30e5f9bb24caa003e9f2f0497ad287fdf95623",
+      "value": "0x55bfa5e52a1eec16a48da9a50166393668b07f552ce1694e4fe7afb30c7d9143"
+    },
+    {
+      "key": "0x8821bee2ba0df28761afff119d66390d594cd280",
+      "value": "0xb93b1f98b4210afb40e1ef0d16aeaaa15b7cc07a48d4db146e9da7d50a1d591b"
+    },
+    {
+      "key": "0x306b1ea3ecdf94ab739f1910bbda052ed4a9f949",
+      "value": "0x6f49b9465a8a9b10edbfc929a0b5749c03f3060c9fe2cfd63aa99e9d7579aae5"
+    },
+    {
+      "key": "0x8a90cab2b38dba80c64b7734e58ee1db38b8992e",
+      "value": "0x3e2eafa392748c7228510ca0a862f357241896e56e9f2034f5f9cd36c3d0ec07"
+    },
+    {
+      "key": "0x282bdd42f4eb70e7a9d9f40c8fea0825b7f68c5d",
+      "value": "0x4c846c6371ecb14b61601f14d44b7361f16316d8b1a5a839bc6a58605ea714f8"
+    },
+    {
+      "key": "0x4b15a9c28034dc83db40cd810001427d3bd7163d",
+      "value": "0x9584cd8969fcf9b3d39d52e49e07b0e288382202c527c897f2e80890d3497af3"
+    },
+    {
+      "key": "0x32973908faee0bf825a343000fe412ebe56f802a",
+      "value": "0xe5e6fbff7f88477e360b4e8d02bcc4717b79d77fe37a553f2de59f50bb1d4bab"
+    },
+    {
+      "key": "0xf8209a55a4579207610a9ecd080bf3b8899d0e69",
+      "value": "0x1e9e28b10638f90347f3c2f0dcdfdb498d989f7bb1f0097f60b65d1ad8e9993b"
+    },
+    {
+      "key": "0xfe8c6d19365453d26af321d0e8c910428c23873f",
+      "value": "0x8044d85b58a53b0b00ee738c0eef78e8e981e6ca5f53da19beae241bf37f9771"
+    },
+    {
+      "key": "0x790b2cf29ed4f310bf7641f013c65d4560d28371",
+      "value": "0x931f7b6ef5c85a92224cc5fe30bd8ecd85f947e5e6c5628037782e16d4f5b96a"
+    },
+    {
+      "key": "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270",
+      "value": "0x1298aec97a48d9ffcd922907dfbfda1fc4a02b736ba8d3416f0cbd0bead5d4e6"
+    },
+    {
+      "key": "0x059edd72cd353df5106d2b9cc5ab83a52287ac3a",
+      "value": "0x8b1b306dc830fdd806be9688f5e99c6c358509b0dd522b552976503f2525c5f0"
+    },
+    {
+      "key": "0x99a9b7c1116f9ceeb1652de04d5969cce509b069",
+      "value": "0x03e5185ceee383d61b4c8590a40f3eb20738c51ae52441069aa6045bb91f81c4"
+    },
+    {
+      "key": "0x884ba86faa29745b6c40b7098567a393e91335cf",
+      "value": "0x9c30b76262d90a0e89c099bad670abb8d40f9f0c38e9f607b196d7ca409d3519"
+    },
+    {
+      "key": "0x6339e5e072086621540d0362c4e3cea0d643e114",
+      "value": "0xbf281881ed5819d0f99d3ce1dc142b7c0783eeec4e391da581f60d8d161c0321"
+    },
+    {
+      "key": "0xbd3531da5cf5857e7cfaa92426877b022e612cf8",
+      "value": "0xf34841c21789c90c9a1ce04d52312d3b1981a824b2c5704c9f7a177211e5729a"
+    },
+    {
+      "key": "0xe012baf811cf9c05c408e879c399960d1f305903",
+      "value": "0x8b4aed68804dff90cdb54cce5607fbfd868bb77f535fdd869ec7477ae07a6a25"
+    },
+    {
+      "key": "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
+      "value": "0xbd2c993951e1f02927ef782ff83a50f1d61e84409bdc7357c9c022c1c574d35c"
+    },
+    {
+      "key": "0x524cab2ec69124574082676e6f654a18df49a048",
+      "value": "0x4d0a8b5ee9d11080ea4516f9848c8494248de1625f09bb4e9bc60b7ddf888640"
+    },
+    {
+      "key": "0x364c828ee171616a39897688a831c2499ad972ec",
+      "value": "0xe3fac8e2d73a240470366bbc7a81336ea621ca251f6d87977dacd3953d9e0b77"
+    },
+    {
+      "key": "0x50f5474724e0ee42d9a4e711ccfb275809fd6d4a",
+      "value": "0x242093687b94151d233923262168b59890985d12e91ad3224533fb5b9e4f510a"
+    },
+    {
+      "key": "0xf17131a4c85e8a75ba52b3f91ce8c32f6f163924",
+      "value": "0x4328c730b489e1e75333572033376b67ddc99f81ee14561ad8534e53093e3ec6"
+    },
+    {
+      "key": "0x5cc5b05a8a13e3fbdb0bb9fccd98d38e50f90c38",
+      "value": "0xde333c5e14b354419e7403fd6af3191434d1fd16049620db864a50152b5d9487"
+    },
+    {
+      "key": "0x1a92f7381b9f03921564a437210bb9396471050c",
+      "value": "0x855dfd70930397ca42b7c07c4d0e81c39a8bb39daaaeb9f77dec218c0de20c41"
+    },
+    {
+      "key": "0x23581767a106ae21c074b2276d25e5c3e136a68b",
+      "value": "0x1c56571762eb80ef0b82f15e0a982fe525e7ca089ca785980f9b972c53682ea4"
+    },
+    {
+      "key": "0xbe9371326f91345777b04394448c23e2bfeaa826",
+      "value": "0xf4e4fe89cf29cb31c76871eb0fe94cf1fb63e1436b3d4d349cac52bd86b28438"
+    },
+    {
+      "key": "0xd3d9ddd0cf0a5f0bfb8f7fceae075df687eaebab",
+      "value": "0xe0d724235b72c9e7508097a10f5788655f1f0e07a36d14e68e124db4c60a9cc6"
+    },
+    {
+      "key": "0x34eebee6942d8def3c125458d1a86e0a897fd6f9",
+      "value": "0x164599acf6e406a5cb1c4fdf6e07016d20229524981a8d3db7a0a596b5cdd04a"
+    },
+    {
+      "key": "0x394e3d3044fc89fcdd966d3cb35ac0b32b0cda91",
+      "value": "0x8158ee3d1fcf169a49ed999d509ac56a38be6fe4e4ad6a72a935e9b178afb33f"
+    },
+    {
+      "key": "0x41f58a8a5874d0ab9dda0d60649f10bfea6c2e01",
+      "value": "0xfc865adc43b0a4beaf58df5cee35490b4cf9bd801409bcd30d03c0954f8b79a1"
+    },
+    {
+      "key": "0xbfdd331f7193729a33159e9309f95281c931c7de",
+      "value": "0xc57f55b9eb993a0e202fc462ddab1a672c480792c36ea644831d0982d3afba61"
+    },
+    {
+      "key": "0x79fcdef22feed20eddacbb2587640e45491b757f",
+      "value": "0xddf2186511f4017a57d3b2afed055293efbaec7446142cb1878bb93e0b8dee39"
+    },
+    {
+      "key": "0xb852c6b5892256c264cc2c888ea462189154d8d7",
+      "value": "0x265c2f0ee43cd7302d678a06538eb4432bfcb1edb568ce4b0dd91b2fd70617aa"
+    },
+    {
+      "key": "0xacf63e56fd08970b43401492a02f6f38b6635c91",
+      "value": "0x89bd685b84d4d363c10d0ca57e6985ff2efdbc284df46a055f4164ca51706809"
+    },
+    {
+      "key": "0x59468516a8259058bad1ca5f8f4bff190d30e066",
+      "value": "0xf02b1238ea2a786e1520f0e8b48ef498a072a7de82636e319e9f9208f4f15995"
+    },
+    {
+      "key": "0x73e096a6cecf53692386e7747c0fba5f2773079d",
+      "value": "0x53a9a00cf0535c7b2685f650a63e167827dee8c08c35b4280840b486930b4b62"
+    },
+    {
+      "key": "0xee0ba89699a3dd0f08cb516c069d81a762f65e56",
+      "value": "0x7d086c67c9072a21008d4778a596f710164f99f422a66c77897e3889887b9b5a"
+    },
+    {
+      "key": "0xf69d05528d08d9600e829e6f258066c2e928c108",
+      "value": "0x7e07aa88d4d13dcfd8506452dffe0d230805d6c5142dcf531d891764433058e9"
+    },
+    {
+      "key": "0x49907029e80de1cbb3a46fd44247bf8ba8b5f12f",
+      "value": "0xfcb50bf5b9615408abdb74df878d768b31252bcec3a5111c7c6f3071aeeeb2a6"
+    },
+    {
+      "key": "0x8c5029957bf42c61d19a29075dc4e00b626e5022",
+      "value": "0x150ddca93d5a4c64b7a9e666c6790dba6ad3a565c78775d412c76cc483f93b60"
+    },
+    {
+      "key": "0x709d30f1f60f03d85a0ef33142ef3259392dc9e1",
+      "value": "0x7db7cfd09a86203cbd57ccf644797b8834784981b5a691d5e2a1dd78240aac72"
+    },
+    {
+      "key": "0x6efc003d3f3658383f06185503340c2cf27a57b6",
+      "value": "0x2a45519a593ccff067d865b0b4d37f30d85b9ef3ee7df50fdc2d76be4a35ba7a"
+    },
+    {
+      "key": "0x39ee2c7b3cb80254225884ca001f57118c8f21b6",
+      "value": "0xce22fb4a604a60db8e474f5ba164cc0ebbedb780b75099a7a70074e8c9e59f99"
+    },
+    {
+      "key": "0x749f5ddf5ab4c1f26f74560a78300563c34b417d",
+      "value": "0xc73ac888b9caceae84e29964f1975621a9a9fcbd24f4ebd668e249ed9707f5c0"
+    },
+    {
+      "key": "0x845a007d9f283614f403a24e3eb3455f720559ca",
+      "value": "0xf6f37abc683647ec8f0e2e5c6aacceacca5f1e2ff27a3b07dab28aaae13aa69e"
+    },
+    {
+      "key": "0x64a1c0937728d8d2fa8cd81ef61a9c860b7362db",
+      "value": "0x4acb2783df109d2586f159c858fb413ccb21c0695cf26500c21cd681c31c8293"
+    },
+    {
+      "key": "0x46e0f5f1b9780899bc217bd4489768894a8bfc64",
+      "value": "0x7fb7d7fbaf55eea9e39df50d58391cb0f8d9f7d28c14a0561e0031dcd703bfc5"
+    },
+    {
+      "key": "0x98c7fa114b2fe921ba97f628e9dcb72890491721",
+      "value": "0xaaeb4f883e9daccf19eb1d5dbce04233ac8dfcc9dc714aea858cf6b4b1fc7536"
+    },
+    {
+      "key": "0x16129e08420cea192471085e76310da390e2b9e6",
+      "value": "0xf362ce07e94c733cf6c54ff11158055dcab120f1719ba87405191dcb7f29547f"
+    },
+    {
+      "key": "0x716f29b8972d551294d9e02b3eb0fc1107fbf4aa",
+      "value": "0x5b92f0866c7144d7c8bb5eabc9e78ddb2f0d87fadc9584f97be1e64f321313b8"
+    },
+    {
+      "key": "0x231d3559aa848bf10366fb9868590f01d34bf240",
+      "value": "0x3133ab6c052c122c0e02b07fe004a1c8c21365c3ec5dd8a6485615cb6375e69e"
+    },
+    {
+      "key": "0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85",
+      "value": "0x98abe53a831507aeea9f46d0a04c1191e4ae858ed734982baebd12ba67df3de8"
+    },
+    {
+      "key": "0x77372a4cc66063575b05b44481f059be356964a4",
+      "value": "0xd1fd64d63210f41fa72d89d7f5549541c7d17926813dc76f100435bda2d5228d"
+    },
+    {
+      "key": "0xbd4455da5929d5639ee098abfaa3241e9ae111af",
+      "value": "0xc690ddb1c07ddb4f0d9be3d7b2b46ab36fb54806cd9d45327bfe92d86f88236d"
+    },
+    {
+      "key": "0x0bcc509282a5fb44c32c59e2fa1ce613f51c86a2",
+      "value": "0x1e1fef69d356930845f52e423ce5db719480de713446585d3cb68958ee1808a5"
+    },
+    {
+      "key": "0xd2a077ec359d94e0a0b7e84435eacb40a67a817c",
+      "value": "0x9ba8a006b573871be4532ad690c04ffa87b5a964c05451c6f6b070167d9b6489"
+    },
+    {
+      "key": "0xe47e5dcde8e14e874d2711e786bb34ae6980bef8",
+      "value": "0x45ca926399386aff6a689925d1498e49c2c9d87333bf3ef8320bd409a900aaba"
+    },
+    {
+      "key": "0xccf3baa603dfddd7c41619fdb8dd0306b11571fe",
+      "value": "0xe9d0b39ce56413737ab5dc10378c00a517067883502e658f0f0c31b72b092641"
+    },
+    {
+      "key": "0x067a1eb5e383ed24b66d72aaf80d8d7db3d299a8",
+      "value": "0x59cbfc2aee58e18e23ce0bf802be873c9dd3bfb0394c34baa729efe4125bbbfe"
+    },
+    {
+      "key": "0x3023ceeb54c32f60aaaf264362f6b775cd42abad",
+      "value": "0x083160182ba169dc095e1d6afddf1da8f4da70f5ad956027203416cac6c04391"
+    },
+    {
+      "key": "0x4e1f41613c9084fdb9e34e11fae9412427480e56",
+      "value": "0xe105ec3cc3e00a961ebfabb1ab4afd605a29fe82db7653507a592d365721236c"
+    },
+    {
+      "key": "0x036721e5a769cc48b3189efbb9cce4471e8a48b1",
+      "value": "0x22fb517c32fdc90208aaf5312b6f6cd029d823977ad22c67a30eb0a84fb0c3ae"
+    },
+    {
+      "key": "0x960b7a6bcd451c9968473f7bbfd9be826efd549a",
+      "value": "0xb6ee1e36f62072093c3a432348d4809d4aa57934bf1192d5faebe2162288b06f"
+    },
+    {
+      "key": "0x8a3749936e723325c6b645a0901470cd9e790b94",
+      "value": "0xcbceec8f5e32191ebfe98975f4fae02fcd0f9e9f582ca59b88b562bd7b9386e3"
+    },
+    {
+      "key": "0x9bbe09e8253450856e1dc6b068b07664152e4703",
+      "value": "0x266b5d80c68a2003bd83317f740e45107421943545c59bc9fd81720622cf83bb"
+    },
+    {
+      "key": "0x82c7a8f707110f5fbb16184a5933e9f78a34c6ab",
+      "value": "0x2f45315f447f66b4f190196d5f46b4e8b8725886108a4e61f0bfe8771de15f25"
+    },
+    {
+      "key": "0xbce3781ae7ca1a5e050bd9c4c77369867ebc307e",
+      "value": "0xdd4d718a243a6b4f5f9d22dace1725c3606017d451feddc0817b89152c68b0c3"
+    },
+    {
+      "key": "0x08d7c0242953446436f34b4c78fe9da38c73668d",
+      "value": "0x88a33b350dd5d46cfeaf85b8036058ecd650dc8abb1aca7ae8d685497bca44b4"
+    },
+    {
+      "key": "0xb283dbacecd75594b66039a341a48db2d85fa37a",
+      "value": "0x9604340a1141ebf467ed23fd4fa09b6e406fbd32a6640ac0946d3b1c855dbdcd"
+    },
+    {
+      "key": "0x209e639a0ec166ac7a1a4ba41968fa967db30221",
+      "value": "0x534e7618663841db2c7685962c6ed1305ddc39ec1b335100e9e7f65f40f89896"
+    },
+    {
+      "key": "0xd7fbff0fd48de02901e19b192cc59b1c31198526",
+      "value": "0xe929f6f5db7e05f32d5dc46deefd95d86056baf3b17feb7cae66a4b72371fab0"
+    },
+    {
+      "key": "0x4764bc088a27f490353e8cf1558ba02fdc418c65",
+      "value": "0xa1ec28b031e4dd1077330be305f6216c2fbce29701f230b87e0dce9f5a3aa3ca"
+    },
+    {
+      "key": "0xf1c6f6c2a6110414670f27563b79cbe019b30aed",
+      "value": "0xb8f821e3a0bb91f2f335140c59172f8b140cff7aa7c40b87757e693ba339c603"
+    },
+    {
+      "key": "0x95353ab606de77d7cf69f5f346fe0e31d9557149",
+      "value": "0x7de583f96a3795f567a7a85c882f9cf1cc7782f1d2226c4626f74027718f6d31"
+    },
+    {
+      "key": "0x1792a96e5668ad7c167ab804a100ce42395ce54d",
+      "value": "0xa4f9cc868eed815e4c69eb1baca00f29f99bcd25200374a980447dc3a914f887"
+    },
+    {
+      "key": "0x4ad3785ec7eed7589fa86538244a4530f962434f",
+      "value": "0xb24d55164dec15911d4144640451c0535b7b8fb464605010f2cccd8659f5b5e4"
+    },
+    {
+      "key": "0x5bd815fd6c096bab38b4c6553cfce3585194dff9",
+      "value": "0x998f8ce5a7068bf0a5308954316c10806f3037b086aacb074540cb6be4e73144"
+    },
+    {
+      "key": "0x9b091d2e0bb88ace4fe8f0fab87b93d8ba932ec4",
+      "value": "0x7493bbc1e2c9ee6aca4457cae77092a9e50507c22e5dc6eb17a02d69c85f2755"
+    },
+    {
+      "key": "0xd532b88607b1877fe20c181cba2550e3bbd6b31c",
+      "value": "0x71797fadbacae22dede155b0da8b4fc4ba4661eab7d3808ff65e6e1362636f08"
+    },
+    {
+      "key": "0xa7088ed1a460a154404adbfd7d6a3873e9f90340",
+      "value": "0xf5b130dfeee12a9da38fba59e7dae2fefec2f374366c819a791c9f2ed96a7337"
+    },
+    {
+      "key": "0xccdf1373040d9ca4b5be1392d1945c1dae4a862c",
+      "value": "0x59c406a2e34dc7a952d54e801f5d63240969a4febdcee31373a8395e9795c6cb"
+    },
+    {
+      "key": "0xf83a99e084c1d575af8e12ff492f5e6c7b768b48",
+      "value": "0xb22bfbe40e4a30e398cab5bb018517d2d899f4cfeb06c6a92ff8a7351d8f6eb7"
+    },
+    {
+      "key": "0xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa",
+      "value": "0xf2e7e90ccd7bd0075b374553d17dc4117b6b1f3dc766c6760d02793012618732"
+    },
+    {
+      "key": "0x0a252663dbcc0b073063d6420a40319e438cfa59",
+      "value": "0x8f3c1ff0d53956445f0dbbbe2a35a03444f01c23de54f921683cb7ceb8ccd6cf"
+    }
+  ],
+  "datas": {
+    "0xb7f7f6c52f2e2fdb1963eab30438024864c313f6": [
+      "0xb7f7f6c52f2e2fdb1963eab30438024864c313f6",
+      "Wrapped Cryptopunks",
+      "WPUNKS",
+      1,
+      0
+    ],
+    "0xed5af388653567af2f388e6224dc7c4b3241c544": [
+      "0xed5af388653567af2f388e6224dc7c4b3241c544",
+      "Azuki",
+      "AZUKI",
+      1,
+      0
+    ],
+    "0x60e4d786628fea6478f785a6d7e704777c86a7c6": [
+      "0x60e4d786628fea6478f785a6d7e704777c86a7c6",
+      "MutantApeYachtClub",
+      "MAYC",
+      1,
+      0
+    ],
+    "0x6ca10bc06de5af062cfd1dedde85b46ef43ec8d3": [
+      "0x6ca10bc06de5af062cfd1dedde85b46ef43ec8d3",
+      "MetaZellys ETH",
+      "MZ",
+      1,
+      0
+    ],
+    "0xd774557b647330c91bf44cfeab205095f7e6c367": [
+      "0xd774557b647330c91bf44cfeab205095f7e6c367",
+      "Nakamigos",
+      "NKMGS",
+      1,
+      0
+    ],
+    "0x34d85c9cdeb23fa97cb08333b511ac86e1c4e258": [
+      "0x34d85c9cdeb23fa97cb08333b511ac86e1c4e258",
+      "Otherdeed",
+      "OTHR",
+      1,
+      0
+    ],
+    "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7": [
+      "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
+      "Meebits",
+      "⚇",
+      1,
+      0
+    ],
+    "0x5b1085136a811e55b2bb2ca1ea456ba82126a376": [
+      "0x5b1085136a811e55b2bb2ca1ea456ba82126a376",
+      "Vessel",
+      "VSL",
+      1,
+      0
+    ],
+    "0xba30e5f9bb24caa003e9f2f0497ad287fdf95623": [
+      "0xba30e5f9bb24caa003e9f2f0497ad287fdf95623",
+      "BoredApeKennelClub",
+      "BAKC",
+      1,
+      0
+    ],
+    "0x8821bee2ba0df28761afff119d66390d594cd280": [
+      "0x8821bee2ba0df28761afff119d66390d594cd280",
+      "DeGods",
+      "DEGODS",
+      1,
+      0
+    ],
+    "0x306b1ea3ecdf94ab739f1910bbda052ed4a9f949": [
+      "0x306b1ea3ecdf94ab739f1910bbda052ed4a9f949",
+      "Beanz",
+      "BEANZ",
+      1,
+      0
+    ],
+    "0x8a90cab2b38dba80c64b7734e58ee1db38b8992e": [
+      "0x8a90cab2b38dba80c64b7734e58ee1db38b8992e",
+      "Doodles",
+      "DOODLE",
+      1,
+      0
+    ],
+    "0x282bdd42f4eb70e7a9d9f40c8fea0825b7f68c5d": [
+      "0x282bdd42f4eb70e7a9d9f40c8fea0825b7f68c5d",
+      "V1 Cryptopunks (Wrapped)",
+      "WPV1",
+      1,
+      0
+    ],
+    "0x4b15a9c28034dc83db40cd810001427d3bd7163d": [
+      "0x4b15a9c28034dc83db40cd810001427d3bd7163d",
+      "HV-MTL",
+      "HV-MTL",
+      1,
+      0
+    ],
+    "0x32973908faee0bf825a343000fe412ebe56f802a": [
+      "0x32973908faee0bf825a343000fe412ebe56f802a",
+      "Pixelmon",
+      "PXLMN",
+      1,
+      0
+    ],
+    "0xf8209a55a4579207610a9ecd080bf3b8899d0e69": [
+      "0xf8209a55a4579207610a9ecd080bf3b8899d0e69",
+      "XXD34D",
+      "D34D",
+      1,
+      0
+    ],
+    "0xfe8c6d19365453d26af321d0e8c910428c23873f": [
+      "0xfe8c6d19365453d26af321d0e8c910428c23873f",
+      "Cold Blooded Creepz",
+      "CBC",
+      2,
+      0
+    ],
+    "0x790b2cf29ed4f310bf7641f013c65d4560d28371": [
+      "0x790b2cf29ed4f310bf7641f013c65d4560d28371",
+      "Otherdeed Expanded",
+      "EXP",
+      1,
+      0
+    ],
+    "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270": [
+      "0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270",
+      "Art Blocks",
+      "BLOCKS",
+      1,
+      0
+    ],
+    "0x059edd72cd353df5106d2b9cc5ab83a52287ac3a": [
+      "0x059edd72cd353df5106d2b9cc5ab83a52287ac3a",
+      "Art Blocks",
+      "BLOCKS",
+      1,
+      0
+    ],
+    "0x99a9b7c1116f9ceeb1652de04d5969cce509b069": [
+      "0x99a9b7c1116f9ceeb1652de04d5969cce509b069",
+      "Art Blocks",
+      "BLOCKS",
+      1,
+      0
+    ],
+    "0x884ba86faa29745b6c40b7098567a393e91335cf": [
+      "0x884ba86faa29745b6c40b7098567a393e91335cf",
+      "Saved Souls",
+      "SS",
+      1,
+      0
+    ],
+    "0x6339e5e072086621540d0362c4e3cea0d643e114": [
+      "0x6339e5e072086621540d0362c4e3cea0d643e114",
+      "Opepen Edition",
+      "OPEPEN",
+      1,
+      0
+    ],
+    "0xbd3531da5cf5857e7cfaa92426877b022e612cf8": [
+      "0xbd3531da5cf5857e7cfaa92426877b022e612cf8",
+      "PudgyPenguins",
+      "PPG",
+      1,
+      0
+    ],
+    "0xe012baf811cf9c05c408e879c399960d1f305903": [
+      "0xe012baf811cf9c05c408e879c399960d1f305903",
+      "Koda",
+      "KODA",
+      1,
+      0
+    ],
+    "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b": [
+      "0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b",
+      "CloneX",
+      "CloneX",
+      1,
+      0
+    ],
+    "0x524cab2ec69124574082676e6f654a18df49a048": [
+      "0x524cab2ec69124574082676e6f654a18df49a048",
+      "LilPudgys",
+      "LP",
+      1,
+      0
+    ],
+    "0x364c828ee171616a39897688a831c2499ad972ec": [
+      "0x364c828ee171616a39897688a831c2499ad972ec",
+      "Sappy Seals",
+      "SAPS",
+      1,
+      0
+    ],
+    "0x50f5474724e0ee42d9a4e711ccfb275809fd6d4a": [
+      "0x50f5474724e0ee42d9a4e711ccfb275809fd6d4a",
+      "Sandbox's LANDs",
+      "LAND",
+      1,
+      0
+    ],
+    "0xf17131a4c85e8a75ba52b3f91ce8c32f6f163924": [
+      "0xf17131a4c85e8a75ba52b3f91ce8c32f6f163924",
+      "The Sandbox Official Open Sea Store",
+      "SAND",
+      1,
+      0
+    ],
+    "0x5cc5b05a8a13e3fbdb0bb9fccd98d38e50f90c38": [
+      "0x5cc5b05a8a13e3fbdb0bb9fccd98d38e50f90c38",
+      "Sandbox's LANDs",
+      "LAND",
+      1,
+      0
+    ],
+    "0x1a92f7381b9f03921564a437210bb9396471050c": [
+      "0x1a92f7381b9f03921564a437210bb9396471050c",
+      "Cool Cats",
+      "COOL",
+      1,
+      0
+    ],
+    "0x23581767a106ae21c074b2276d25e5c3e136a68b": [
+      "0x23581767a106ae21c074b2276d25e5c3e136a68b",
+      "Moonbirds",
+      "MOONBIRD",
+      1,
+      0
+    ],
+    "0xbe9371326f91345777b04394448c23e2bfeaa826": [
+      "0xbe9371326f91345777b04394448c23e2bfeaa826",
+      "Gemesis",
+      "OSP",
+      1,
+      0
+    ],
+    "0xd3d9ddd0cf0a5f0bfb8f7fceae075df687eaebab": [
+      "0xd3d9ddd0cf0a5f0bfb8f7fceae075df687eaebab",
+      "TEST NFT",
+      "TEST",
+      1,
+      0
+    ],
+    "0x34eebee6942d8def3c125458d1a86e0a897fd6f9": [
+      "0x34eebee6942d8def3c125458d1a86e0a897fd6f9",
+      "Checks",
+      "CHECKS",
+      1,
+      0
+    ],
+    "0x394e3d3044fc89fcdd966d3cb35ac0b32b0cda91": [
+      "0x394e3d3044fc89fcdd966d3cb35ac0b32b0cda91",
+      "RENGA",
+      "RENGA",
+      1,
+      0
+    ],
+    "0x41f58a8a5874d0ab9dda0d60649f10bfea6c2e01": [
+      "0x41f58a8a5874d0ab9dda0d60649f10bfea6c2e01",
+      "PRTS",
+      "PRTS",
+      1,
+      0
+    ],
+    "0xbfdd331f7193729a33159e9309f95281c931c7de": [
+      "0xbfdd331f7193729a33159e9309f95281c931c7de",
+      "Grimalkins by Chiho Aoshima",
+      "GMK",
+      1,
+      0
+    ],
+    "0x79fcdef22feed20eddacbb2587640e45491b757f": [
+      "0x79fcdef22feed20eddacbb2587640e45491b757f",
+      "mfer",
+      "MFER",
+      1,
+      0
+    ],
+    "0xb852c6b5892256c264cc2c888ea462189154d8d7": [
+      "0xb852c6b5892256c264cc2c888ea462189154d8d7",
+      "Rektguy",
+      "Rektguy",
+      1,
+      0
+    ],
+    "0xacf63e56fd08970b43401492a02f6f38b6635c91": [
+      "0xacf63e56fd08970b43401492a02f6f38b6635c91",
+      "Kanpai Pandas",
+      "YKPS",
+      1,
+      0
+    ],
+    "0x59468516a8259058bad1ca5f8f4bff190d30e066": [
+      "0x59468516a8259058bad1ca5f8f4bff190d30e066",
+      "Invisible Friends",
+      "INVSBLE",
+      1,
+      0
+    ],
+    "0x73e096a6cecf53692386e7747c0fba5f2773079d": [
+      "0x73e096a6cecf53692386e7747c0fba5f2773079d",
+      "REKT Collective",
+      "REKT",
+      1,
+      0
+    ],
+    "0xee0ba89699a3dd0f08cb516c069d81a762f65e56": [
+      "0xee0ba89699a3dd0f08cb516c069d81a762f65e56",
+      "Sneaky Bat Syndicate",
+      "SBS",
+      1,
+      0
+    ],
+    "0xf69d05528d08d9600e829e6f258066c2e928c108": [
+      "0xf69d05528d08d9600e829e6f258066c2e928c108",
+      "CezanneArtMuseum",
+      "CAM",
+      1,
+      0
+    ],
+    "0x49907029e80de1cbb3a46fd44247bf8ba8b5f12f": [
+      "0x49907029e80de1cbb3a46fd44247bf8ba8b5f12f",
+      "More Than Gamers",
+      "MTG",
+      1,
+      0
+    ],
+    "0x8c5029957bf42c61d19a29075dc4e00b626e5022": [
+      "0x8c5029957bf42c61d19a29075dc4e00b626e5022",
+      "Alpha Girl Club",
+      "AGC",
+      2,
+      0
+    ],
+    "0x709d30f1f60f03d85a0ef33142ef3259392dc9e1": [
+      "0x709d30f1f60f03d85a0ef33142ef3259392dc9e1",
+      "Loser Club",
+      "LOSERCLUB",
+      1,
+      0
+    ],
+    "0x6efc003d3f3658383f06185503340c2cf27a57b6": [
+      "0x6efc003d3f3658383f06185503340c2cf27a57b6",
+      "YOU THE REAL MVP",
+      "MVP",
+      1,
+      0
+    ],
+    "0x39ee2c7b3cb80254225884ca001f57118c8f21b6": [
+      "0x39ee2c7b3cb80254225884ca001f57118c8f21b6",
+      "Potatoz",
+      "Potatoz",
+      1,
+      0
+    ],
+    "0x749f5ddf5ab4c1f26f74560a78300563c34b417d": [
+      "0x749f5ddf5ab4c1f26f74560a78300563c34b417d",
+      "ALTS by adidas",
+      "ALT",
+      1,
+      0
+    ],
+    "0x845a007d9f283614f403a24e3eb3455f720559ca": [
+      "0x845a007d9f283614f403a24e3eb3455f720559ca",
+      "CryptoNinjaPartners",
+      "CNP",
+      1,
+      0
+    ],
+    "0x64a1c0937728d8d2fa8cd81ef61a9c860b7362db": [
+      "0x64a1c0937728d8d2fa8cd81ef61a9c860b7362db",
+      "KILLABITS",
+      "KILLABITS",
+      1,
+      0
+    ],
+    "0x46e0f5f1b9780899bc217bd4489768894a8bfc64": [
+      "0x46e0f5f1b9780899bc217bd4489768894a8bfc64",
+      "MR POTATO NFTs",
+      "POTATOS",
+      1,
+      0
+    ],
+    "0x98c7fa114b2fe921ba97f628e9dcb72890491721": [
+      "0x98c7fa114b2fe921ba97f628e9dcb72890491721",
+      "EtherPOAP OG",
+      "EPO",
+      1,
+      0
+    ],
+    "0x16129e08420cea192471085e76310da390e2b9e6": [
+      "0x16129e08420cea192471085e76310da390e2b9e6",
+      "Crypto Vending Machines",
+      "CVMS",
+      1,
+      0
+    ],
+    "0x716f29b8972d551294d9e02b3eb0fc1107fbf4aa": [
+      "0x716f29b8972d551294d9e02b3eb0fc1107fbf4aa",
+      "Imaginary Ones",
+      "IO",
+      1,
+      0
+    ],
+    "0x231d3559aa848bf10366fb9868590f01d34bf240": [
+      "0x231d3559aa848bf10366fb9868590f01d34bf240",
+      "Valhalla",
+      "VAL",
+      1,
+      0
+    ],
+    "0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85": [
+      "0x57f1887a8bf19b14fc0df6fd9b2acc9af147ea85",
+      "Ethereum Name Service",
+      "ENS",
+      1,
+      0
+    ],
+    "0x77372a4cc66063575b05b44481f059be356964a4": [
+      "0x77372a4cc66063575b05b44481f059be356964a4",
+      "a KID called BEAST",
+      "AKCB",
+      1,
+      0
+    ],
+    "0xbd4455da5929d5639ee098abfaa3241e9ae111af": [
+      "0xbd4455da5929d5639ee098abfaa3241e9ae111af",
+      "NFT Worlds",
+      "NFT Worlds",
+      1,
+      0
+    ],
+    "0x0bcc509282a5fb44c32c59e2fa1ce613f51c86a2": [
+      "0x0bcc509282a5fb44c32c59e2fa1ce613f51c86a2",
+      "Kandyland",
+      "KLAND",
+      1,
+      0
+    ],
+    "0xd2a077ec359d94e0a0b7e84435eacb40a67a817c": [
+      "0xd2a077ec359d94e0a0b7e84435eacb40a67a817c",
+      "Admit One",
+      "ADMIT",
+      1,
+      0
+    ],
+    "0xe47e5dcde8e14e874d2711e786bb34ae6980bef8": [
+      "0xe47e5dcde8e14e874d2711e786bb34ae6980bef8",
+      "Meta Monopoly NFT",
+      "MMNFT",
+      1,
+      0
+    ],
+    "0xccf3baa603dfddd7c41619fdb8dd0306b11571fe": [
+      "0xccf3baa603dfddd7c41619fdb8dd0306b11571fe",
+      "YOLO Bunny",
+      "YB",
+      1,
+      0
+    ],
+    "0x067a1eb5e383ed24b66d72aaf80d8d7db3d299a8": [
+      "0x067a1eb5e383ed24b66d72aaf80d8d7db3d299a8",
+      "Sandbox's ASSETs",
+      "ASSET",
+      1,
+      0
+    ],
+    "0x3023ceeb54c32f60aaaf264362f6b775cd42abad": [
+      "0x3023ceeb54c32f60aaaf264362f6b775cd42abad",
+      "Saints",
+      "SAT",
+      1,
+      0
+    ],
+    "0x4e1f41613c9084fdb9e34e11fae9412427480e56": [
+      "0x4e1f41613c9084fdb9e34e11fae9412427480e56",
+      "Terraforms",
+      "TERRAFORMS",
+      1,
+      0
+    ],
+    "0x036721e5a769cc48b3189efbb9cce4471e8a48b1": [
+      "0x036721e5a769cc48b3189efbb9cce4471e8a48b1",
+      "Checks",
+      "CHECKS",
+      1,
+      0
+    ],
+    "0x960b7a6bcd451c9968473f7bbfd9be826efd549a": [
+      "0x960b7a6bcd451c9968473f7bbfd9be826efd549a",
+      "OnChainMonkey",
+      "OCMONK",
+      1,
+      0
+    ],
+    "0x8a3749936e723325c6b645a0901470cd9e790b94": [
+      "0x8a3749936e723325c6b645a0901470cd9e790b94",
+      "Trainers",
+      "TRNR",
+      1,
+      0
+    ],
+    "0x9bbe09e8253450856e1dc6b068b07664152e4703": [
+      "0x9bbe09e8253450856e1dc6b068b07664152e4703",
+      "8lements",
+      "8L",
+      1,
+      0
+    ],
+    "0x82c7a8f707110f5fbb16184a5933e9f78a34c6ab": [
+      "0x82c7a8f707110f5fbb16184a5933e9f78a34c6ab",
+      "Emblem Vault V2",
+      "Emblem.pro",
+      1,
+      0
+    ],
+    "0xbce3781ae7ca1a5e050bd9c4c77369867ebc307e": [
+      "0xbce3781ae7ca1a5e050bd9c4c77369867ebc307e",
+      "goblintown",
+      "GOBLIN",
+      1,
+      0
+    ],
+    "0x08d7c0242953446436f34b4c78fe9da38c73668d": [
+      "0x08d7c0242953446436f34b4c78fe9da38c73668d",
+      "PROOF Collective",
+      "PROOF",
+      1,
+      0
+    ],
+    "0xb283dbacecd75594b66039a341a48db2d85fa37a": [
+      "0xb283dbacecd75594b66039a341a48db2d85fa37a",
+      "Iron Paw Gang",
+      "IPG",
+      1,
+      0
+    ],
+    "0x209e639a0ec166ac7a1a4ba41968fa967db30221": [
+      "0x209e639a0ec166ac7a1a4ba41968fa967db30221",
+      "Genuine Undead",
+      "GU",
+      1,
+      0
+    ],
+    "0xd7fbff0fd48de02901e19b192cc59b1c31198526": [
+      "0xd7fbff0fd48de02901e19b192cc59b1c31198526",
+      "Thunderbirds International Rescue Club",
+      "FAB",
+      1,
+      0
+    ],
+    "0x4764bc088a27f490353e8cf1558ba02fdc418c65": [
+      "0x4764bc088a27f490353e8cf1558ba02fdc418c65",
+      "Kolectiv",
+      "KOLECTIV",
+      1,
+      0
+    ],
+    "0xf1c6f6c2a6110414670f27563b79cbe019b30aed": [
+      "0xf1c6f6c2a6110414670f27563b79cbe019b30aed",
+      "snip copy",
+      "SNP",
+      1,
+      0
+    ],
+    "0x95353ab606de77d7cf69f5f346fe0e31d9557149": [
+      "0x95353ab606de77d7cf69f5f346fe0e31d9557149",
+      "adidas Virtual Gear",
+      "AVG",
+      1,
+      0
+    ],
+    "0x1792a96e5668ad7c167ab804a100ce42395ce54d": [
+      "0x1792a96e5668ad7c167ab804a100ce42395ce54d",
+      "Moonbirds Oddities",
+      "ODDITIES",
+      1,
+      0
+    ],
+    "0x4ad3785ec7eed7589fa86538244a4530f962434f": [
+      "0x4ad3785ec7eed7589fa86538244a4530f962434f",
+      "Land of Valeria",
+      "LOV",
+      1,
+      0
+    ],
+    "0x5bd815fd6c096bab38b4c6553cfce3585194dff9": [
+      "0x5bd815fd6c096bab38b4c6553cfce3585194dff9",
+      "The Art of Seasons",
+      "TAOS",
+      1,
+      0
+    ],
+    "0x9b091d2e0bb88ace4fe8f0fab87b93d8ba932ec4": [
+      "0x9b091d2e0bb88ace4fe8f0fab87b93d8ba932ec4",
+      "Neo Tokyo Outer Citizen",
+      "NTOCTZN",
+      1,
+      0
+    ],
+    "0xd532b88607b1877fe20c181cba2550e3bbd6b31c": [
+      "0xd532b88607b1877fe20c181cba2550e3bbd6b31c",
+      "SuperNormalbyZipcy",
+      "SUPERNORMAL",
+      2,
+      0
+    ],
+    "0xa7088ed1a460a154404adbfd7d6a3873e9f90340": [
+      "0xa7088ed1a460a154404adbfd7d6a3873e9f90340",
+      "DelabsAdventurePass",
+      "DAP",
+      1,
+      0
+    ],
+    "0xccdf1373040d9ca4b5be1392d1945c1dae4a862c": [
+      "0xccdf1373040d9ca4b5be1392d1945c1dae4a862c",
+      "PORSCHΞ 911",
+      "911",
+      1,
+      0
+    ],
+    "0xf83a99e084c1d575af8e12ff492f5e6c7b768b48": [
+      "0xf83a99e084c1d575af8e12ff492f5e6c7b768b48",
+      "Walts Vault Dream Catchers",
+      "RAVENDALE",
+      1,
+      0
+    ],
+    "0xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa": [
+      "0xaadc2d4261199ce24a4b0a57370c4fcf43bb60aa",
+      "TheCurrency",
+      "TENDER",
+      1,
+      0
+    ],
+    "0x0a252663dbcc0b073063d6420a40319e438cfa59": [
+      "0x0a252663dbcc0b073063d6420a40319e438cfa59",
+      "XEN Torrent",
+      "XENT",
+      1,
+      0
+    ]
+  }
+}
