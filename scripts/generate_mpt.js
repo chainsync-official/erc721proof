@@ -20,13 +20,14 @@ async function generateMPT() {
 
   for (const contract of contracts) {
     const key = Buffer.from(contract.contract_address.slice(2), "hex");
-    const types = ["string", "string", "string", "uint256", "uint256"];
+    const types = ["string", "string", "string", "uint256", "uint256", "uint256"];
     const values = [
       contract.contract_address,
       contract.name,
       contract.symbol,
-      parseInt(contract.owner_slot_type),
+      contract.owner_slot_type,
       contract.owner_slot_index,
+      contract.owner_unpack_type,
     ];
 
     const leaf = utils.keccak256(abiCoder.encodeParameters(types, values));
