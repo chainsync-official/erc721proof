@@ -57,11 +57,14 @@ async function getCollectionSlot(element) {
   let owner_slot_type = 1;
   let ownerslot = null;
   try {
+    console.log(element, tokenId, owner);
     ownerslot = await nftStorageSlotFinder.findSlotInMapping(
       element.contract_address,
       tokenId,
       owner
     );
+
+    console.log(ownerslot);
 
     if (ownerslot === null) {
       owner_slot_type = 2;

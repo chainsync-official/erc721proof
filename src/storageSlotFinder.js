@@ -56,16 +56,17 @@ NFTStorageSlotFinder.prototype.findSlotInDynamicArray = async function (
 
 NFTStorageSlotFinder.prototype.processStorageProof = function (proofs, owner) {
   let nousevalues = [];
-  for (const proof of proofs.storageProof) {
+  for (const i in proofs.storageProof) {
+    const proof = proofs.storageProof[i];
     if (proof.value !== "0x0") {
       if (proof.value.toLowerCase() === owner.toLowerCase()) {
-        return { owner_slot_index: 0, owner_unpack_type: 0 };
+        return { owner_slot_index: i, owner_unpack_type: 0 };
       } else if (this.get721AOwner(proof.value).toLowerCase() === owner.toLowerCase()) {
-        return { owner_slot_index: 0, owner_unpack_type: 1 };
+        return { owner_slot_index: i, owner_unpack_type: 1 };
       } else if (this.getStructOwner(proof.value).toLowerCase() === owner.toLowerCase()) {
-        return { owner_slot_index: 0, owner_unpack_type: 2 };
+        return { owner_slot_index: i, owner_unpack_type: 2 };
       } else if (this.getERC721AStorageOwner(proof.value).toLowerCase() === owner.toLowerCase()) {
-        return { owner_slot_index: 0, owner_unpack_type: 3 };
+        return { owner_slot_index: i, owner_unpack_type: 3 };
       }
       nousevalues.push(proof.value);
     }

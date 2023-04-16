@@ -1,7 +1,7 @@
 // db.js
 const sqlite3 = require("sqlite3").verbose();
 
-const db = new sqlite3.Database("erc721proof.db", (err) => {
+const db = new sqlite3.Database("data/erc721proof.db", (err) => {
   if (err) {
     console.error(err.message);
   }
@@ -91,7 +91,14 @@ const updateContractData = (contractAddress, data) => {
   return new Promise((resolve, reject) => {
     db.run(
       query,
-      [data.name, data.symbol, data.owner_slot_type, data.owner_slot_index, contractAddress],
+      [
+        data.name,
+        data.symbol,
+        data.owner_slot_type,
+        data.owner_slot_index,
+        data.owner_unpack_type,
+        contractAddress,
+      ],
       function (err) {
         if (err) {
           console.error(err.message);
