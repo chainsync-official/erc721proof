@@ -12,13 +12,15 @@ const createERC721ContractsTable = () => {
   const query = `
   CREATE TABLE IF NOT EXISTS erc721_contracts (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    contract_address TEXT UNIQUE,
+    chain_id integer,
+    contract_address TEXT,
     name TEXT,
     symbol TEXT,
     owner_slot_type INTEGER,
     owner_slot_index INTEGER,
     owner_unpack_type INTEGER
   );`;
+  const indexQuery = `CREATE UNIQUE INDEX IF NOT EXISTS chain_contract ON "erc721_contracts" ("chain_id", "contract_address");`;
 
   return new Promise((resolve, reject) => {
     db.run(query, (err) => {
@@ -27,7 +29,15 @@ const createERC721ContractsTable = () => {
         reject(err);
       } else {
         console.log("erc721_contracts table created");
-        resolve();
+        db.run(indexQuery, (err) => {
+          if (err) {
+            console.error(err.message);
+            reject(err);
+          } else {
+            console.log("erc721_contracts index created");
+            resolve();
+          }
+        });
       }
     });
   });
@@ -38,6 +48,7 @@ const createTable = async () => {
 };
 
 const insertErc721Contract = (
+  chain_id,
   contractAddress,
   name,
   symbol,
@@ -46,13 +57,21 @@ const insertErc721Contract = (
   owner_unpack_type
 ) => {
   const query = `
-  INSERT OR IGNORE INTO erc721_contracts (contract_address, name, symbol, owner_slot_type, owner_slot_index, owner_unpack_type)
-  VALUES (?, ?, ?, ?, ?, ?);`;
+  INSERT OR IGNORE INTO erc721_contracts (chain_id, contract_address, name, symbol, owner_slot_type, owner_slot_index, owner_unpack_type)
+  VALUES (?, ?, ?, ?, ?, ?, ?);`;
 
   return new Promise((resolve, reject) => {
     db.run(
       query,
-      [contractAddress, name, symbol, owner_slot_type, owner_slot_index, owner_unpack_type],
+      [
+        chain_id,
+        contractAddress,
+        name,
+        symbol,
+        owner_slot_type,
+        owner_slot_index,
+        owner_unpack_type,
+      ],
       function (err) {
         if (err) {
           console.error(err.message);
@@ -66,12 +85,12 @@ const insertErc721Contract = (
   });
 };
 
-const getContractData = (contractAddress) => {
+const getContractData = (chain_id, contractAddress) => {
   const query = `
-    SELECT * FROM erc721_contracts WHERE contract_address = ?;`;
+    SELECT * FROM erc721_contracts WHERE chain_id = ? AND contract_address = ?;`;
 
   return new Promise((resolve, reject) => {
-    db.get(query, [contractAddress], (err, row) => {
+    db.get(query, [chain_id, contractAddress], (err, row) => {
       if (err) {
         console.error(err.message);
         reject(err);
@@ -82,11 +101,11 @@ const getContractData = (contractAddress) => {
   });
 };
 
-const updateContractData = (contractAddress, data) => {
+const updateContractData = (chain_id, contractAddress, data) => {
   const query = `
   UPDATE erc721_contracts
   SET name = ?, symbol = ?, owner_slot_type = ?, owner_slot_index = ?, owner_unpack_type = ?
-  WHERE contract_address = ?;`;
+  WHERE chain_id = ? AND contract_address = ?;`;
 
   return new Promise((resolve, reject) => {
     db.run(
@@ -97,6 +116,7 @@ const updateContractData = (contractAddress, data) => {
         data.owner_slot_type,
         data.owner_slot_index,
         data.owner_unpack_type,
+        chain_id,
         contractAddress,
       ],
       function (err) {
@@ -112,12 +132,12 @@ const updateContractData = (contractAddress, data) => {
   });
 };
 
-const getAllContractsByOwnerSlotType = (ownerSlotType) => {
+const getAllContractsByOwnerSlotType = (chain_id, ownerSlotType) => {
   const query = `
-  SELECT * FROM erc721_contracts WHERE owner_slot_type != ?;`;
+  SELECT * FROM erc721_contracts WHERE chain_id = ? AND owner_slot_type != ?;`;
 
   return new Promise((resolve, reject) => {
-    db.all(query, [ownerSlotType], (err, rows) => {
+    db.all(query, [chain_id, ownerSlotType], (err, rows) => {
       if (err) {
         console.error(err.message);
         reject(err);

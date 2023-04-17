@@ -12,6 +12,7 @@ async function generateMPT() {
   let i = 0;
   for (const contract of contracts) {
     leafs.push([
+      contract.chain_id,
       contract.contract_address,
       contract.name,
       contract.symbol,
@@ -24,6 +25,7 @@ async function generateMPT() {
   }
 
   const tree = StandardMerkleTree.of(leafs, [
+    "uint256",
     "address",
     "string",
     "string",

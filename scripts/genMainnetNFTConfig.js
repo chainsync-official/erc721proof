@@ -3,6 +3,7 @@ const web3 = new Web3(
   "https://api.bitstack.com/v1/wNFxbiJyQsSeLrX8RRCHi7NpRxrlErZk/DjShIqLishPCTB9HiMkPHXjUM9CNM9Na/ETH/mainnet"
 ); // 请替换为您的以太坊节点URL
 
+const chain_id = 1;
 const erc721abi = require("../abi/IERC721.json");
 const axios = require("axios");
 const NFTStorageSlotFinder = require("../src/storageSlotFinder");
@@ -11,7 +12,7 @@ const { insertErc721Contract, getContractData, updateContractData } = require(".
 const BigNumber = require("bignumber.js");
 
 async function main() {
-  let page = 4;
+  let page = 1;
   while (true) {
     console.log(page, "start");
     const cs = await getCollections(page);
@@ -28,7 +29,7 @@ async function main() {
 }
 
 async function getCollectionSlot(element) {
-  const exist = await getContractData(element.contract_address);
+  const exist = await getContractData(chain_id, element.contract_address);
   if (exist && exist.owner_slot_type != 0) {
     // && exist.owner_slot_type != 0
     console.log(element.contract_address + " exist");
@@ -57,7 +58,6 @@ async function getCollectionSlot(element) {
   let owner_slot_type = 1;
   let ownerslot = null;
   try {
-    console.log(element, tokenId, owner);
     ownerslot = await nftStorageSlotFinder.findSlotInMapping(
       element.contract_address,
       tokenId,
@@ -107,6 +107,7 @@ async function getCollectionSlot(element) {
 
   if (!exist) {
     await insertErc721Contract(
+      chain_id,
       element.contract_address,
       data.tokenName,
       data.tokenSymbol,
@@ -118,7 +119,7 @@ async function getCollectionSlot(element) {
     exist.owner_slot_type = owner_slot_type;
     exist.owner_slot_index = ownerslot.owner_slot_index;
     exist.owner_unpack_type = ownerslot.owner_unpack_type;
-    updateContractData(element.contract_address, exist);
+    updateContractData(chain_id, element.contract_address, exist);
   }
 }
 

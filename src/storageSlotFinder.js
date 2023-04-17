@@ -17,9 +17,6 @@ NFTStorageSlotFinder.prototype.findSlotInMapping = async function (
   for (let i = 0; i < 500; i++) {
     slots.push(this.calculateMappingSlot(tokenId, i));
   }
-
-  let nousevalues = [];
-
   const proofs = await this.web3.eth.getProof(contractAddress, slots, "latest");
   return this.processStorageProof(proofs, owner);
 };
@@ -33,8 +30,6 @@ NFTStorageSlotFinder.prototype.findSlotInERC721AStorage = async function (
   for (let i = 0; i < 500; i++) {
     slots.push(this.calculateERC721AStorageSlot(tokenId, i));
   }
-
-  let nousevalues = [];
 
   const proofs = await this.web3.eth.getProof(contractAddress, slots, "latest");
   return this.processStorageProof(proofs, owner);
