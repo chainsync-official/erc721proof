@@ -20,7 +20,7 @@ async function generateMPT() {
       contract.owner_slot_index,
       contract.owner_unpack_type,
     ]);
-    leafsIndexMap[contract.contract_address] = i;
+    leafsIndexMap[packAddressAndChainId(contract.contract_address, contract.chain_id)] = i;
     i++;
   }
 
@@ -46,3 +46,17 @@ async function generateMPT() {
 generateMPT().catch((err) => {
   console.log(err);
 });
+
+function packAddressAndChainId(token, chainId) {
+  const maxChainId = BigInt(2) ** BigInt(96);
+
+  if (BigInt(chainId) >= maxChainId) {
+    throw new Error("chainId is too large");
+  }
+
+  const addressBigInt = BigInt(parseInt(token.slice(2), 16));
+  const chainIdBigInt = BigInt(chainId);
+
+  const packedData = (addressBigInt << BigInt(96)) | chainIdBigInt;
+  return packedData.toString();
+}

@@ -132,12 +132,12 @@ const updateContractData = (chain_id, contractAddress, data) => {
   });
 };
 
-const getAllContractsByOwnerSlotType = (chain_id, ownerSlotType) => {
+const getAllContractsByOwnerSlotType = (ownerSlotType) => {
   const query = `
-  SELECT * FROM erc721_contracts WHERE chain_id = ? AND owner_slot_type != ?;`;
+  SELECT * FROM erc721_contracts WHERE owner_slot_type != ?;`;
 
   return new Promise((resolve, reject) => {
-    db.all(query, [chain_id, ownerSlotType], (err, rows) => {
+    db.all(query, [ownerSlotType], (err, rows) => {
       if (err) {
         console.error(err.message);
         reject(err);
