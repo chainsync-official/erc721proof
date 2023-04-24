@@ -1,15 +1,14 @@
 const Web3 = require("web3");
-const web3 = new Web3(
-  "https://api.bitstack.com/v1/wNFxbiJyQsSeLrX8RRCHi7NpRxrlErZk/DjShIqLishPCTB9HiMkPHXjUM9CNM9Na/ETH/mainnet"
-); // 请替换为您的以太坊节点URL
+const web3 = new Web3("https://eth-mainnet.g.alchemy.com/v2/kqJckZNRbQ0j19Rz5F_zr_pSyOvJb2-2"); // 请替换为您的以太坊节点URL
 
 const chain_id = 1;
 const erc721abi = require("../abi/IERC721.json");
 const axios = require("axios");
-const NFTStorageSlotFinder = require("../src/storageSlotFinder");
+const NFTStorageSlotFinder = require("../src/NFTStorageSlotFinder");
 const nftStorageSlotFinder = new NFTStorageSlotFinder(web3);
-const { insertErc721Contract, getContractData, updateContractData } = require("../src/db");
-const BigNumber = require("bignumber.js");
+const { insertErc721Contract, getContractData, updateContractData } = require("../src/dblite");
+
+const address0 = "0x0000000000000000000000000000000000000000";
 
 async function main() {
   let page = 1;
@@ -49,7 +48,7 @@ async function getCollectionSlot(element) {
   }
   owner = owner.toLowerCase();
 
-  const tokenId = new BigNumber(data.tokenID);
+  const tokenId = web3.utils.toBN(data.tokenID);
 
   console.log(
     `Begin to find owner slot mapping position for contract address: ${element.contract_address}, Token ID: ${tokenId}, Owner: ${owner}`
@@ -63,8 +62,6 @@ async function getCollectionSlot(element) {
       tokenId,
       owner
     );
-
-    console.log(ownerslot);
 
     if (ownerslot === null) {
       owner_slot_type = 2;
@@ -84,6 +81,7 @@ async function getCollectionSlot(element) {
       );
     }
   } catch (error) {
+    console.log(error);
     console.log("contract: " + element.contract_address + " find slot error " + error);
   }
 

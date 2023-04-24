@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { getAllContractsByOwnerSlotType } = require("../src/db");
+const { getAllContractsByOwnerSlotType } = require("../src/dblite");
 const { StandardMerkleTree } = require("@openzeppelin/merkle-tree");
 
 async function generateMPT() {
@@ -7,7 +7,6 @@ async function generateMPT() {
   const contracts = await getAllContractsByOwnerSlotType(ownerSlotType);
 
   const leafs = [];
-  const leafsIndexMap = {};
 
   let i = 0;
   for (const contract of contracts) {
@@ -20,7 +19,6 @@ async function generateMPT() {
       contract.owner_slot_index,
       contract.owner_unpack_type,
     ]);
-    leafsIndexMap[packAddressAndChainId(contract.contract_address, contract.chain_id)] = i;
     i++;
   }
 
@@ -38,25 +36,8 @@ async function generateMPT() {
 
   fs.writeFileSync("data/erc721ConfigLeafs.json", JSON.stringify(tree.dump()));
   console.log("NFT config data saved to erc721ConfigLeafs.json");
-
-  fs.writeFileSync("data/erc721ConfigLeafsIndexMap.json", JSON.stringify(leafsIndexMap, null, 2));
-  console.log("NFT config index map data saved to erc721ConfigLeafsIndexMap.json");
 }
 
 generateMPT().catch((err) => {
   console.log(err);
 });
-
-function packAddressAndChainId(token, chainId) {
-  const maxChainId = BigInt(2) ** BigInt(96);
-
-  if (BigInt(chainId) >= maxChainId) {
-    throw new Error("chainId is too large");
-  }
-
-  const addressBigInt = BigInt(parseInt(token.slice(2), 16));
-  const chainIdBigInt = BigInt(chainId);
-
-  const packedData = (addressBigInt << BigInt(96)) | chainIdBigInt;
-  return packedData.toString();
-}

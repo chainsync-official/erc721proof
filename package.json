@@ -3,8 +3,11 @@
 		"@openzeppelin/merkle-tree": "^1.0.4",
 		"axios": "^1.3.5",
 		"bignumber.js": "^9.1.1",
+		"dotenv": "^16.0.3",
 		"ethers": "^5.7.2",
 		"merkle-patricia-tree": "^4.2.4",
+		"mysql2": "^3.2.3",
+		"sequelize": "^6.31.0",
 		"sqlite3": "^5.1.6",
 		"web3": "^1.9.0"
 	}
