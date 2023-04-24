@@ -4,6 +4,8 @@
 		"axios": "^1.3.5",
 		"bignumber.js": "^9.1.1",
 		"dotenv": "^16.0.3",
+		"ethereumjs-abi": "^0.6.8",
+		"ethereumjs-util": "^7.1.5",
 		"ethers": "^5.7.2",
 		"merkle-patricia-tree": "^4.2.4",
 		"mysql2": "^3.2.3",

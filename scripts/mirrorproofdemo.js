@@ -1,6 +1,7 @@
-const { ethers } = require("hardhat");
+const ethers = require("ethers");
 const Web3 = require("web3");
 const abi = require("ethereumjs-abi");
+const { bufferToHex } = require("ethereumjs-util");
 const axios = require("axios");
 const NFTStorageSlot = require("../src/NFTStorageSlot");
 const nftStorageSlot = new NFTStorageSlot();
@@ -17,7 +18,7 @@ async function main() {
   const nftconfig = await getNFTConfig(1, contract);
 
   const proof = await web3.eth.getProof(
-    tokenContract,
+    contract,
     [
       nftStorageSlot.getOwnerSlot(nftconfig.owner_slot_type, nftconfig.owner_slot_index, tokenId),
       nftStorageSlot.getOwnerSlot(nftconfig.owner_slot_type, nftconfig.owner_slot_index, tokenId1),
@@ -35,28 +36,29 @@ async function main() {
     ]
   );
 
-  console.log(
-    await mirrorERC721Factory.claimNFT(
-      stateMessage,
-      stateRootData.signature,
-      [
-        nftconfig.proof,
-        nftconfig.chainId,
-        nftconfig.contract,
-        nftconfig.name,
-        nftconfig.symbol,
-        nftconfig.owner_slot_type,
-        nftconfig.owner_slot_index,
-        nftconfig.owner_unpack_type,
-      ],
-      [tokenId, tokenId1],
-      [
-        ethers.utils.concat(proof.accountProof),
-        ethers.utils.concat(proof.storageProof[0].proof),
-        ethers.utils.concat(proof.storageProof[1].proof),
-      ]
-    )
-  );
+  const params = [
+    bufferToHex(stateMessage),
+    stateRootData.signature,
+    [
+      nftconfig.proof,
+      nftconfig.chainId,
+      nftconfig.contract,
+      nftconfig.name,
+      nftconfig.symbol,
+      nftconfig.owner_slot_type,
+      nftconfig.owner_slot_index,
+      nftconfig.owner_unpack_type,
+    ],
+    [tokenId, tokenId1],
+    [
+      bufferToHex(ethers.utils.concat(proof.accountProof)),
+      bufferToHex(ethers.utils.concat(proof.storageProof[0].proof)),
+      bufferToHex(ethers.utils.concat(proof.storageProof[1].proof)),
+    ],
+  ];
+  console.log(params);
+
+  //call mirrorERC721Factory.claimNFT
 }
 
 async function getStateRoot(chainId) {
@@ -80,3 +82,7 @@ async function getNFTConfig(chainId, contract) {
   const data = await axios.request(options);
   return data.data.data;
 }
+
+main().catch((err) => {
+  console.log(err);
+});

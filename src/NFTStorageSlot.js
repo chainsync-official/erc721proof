@@ -9,11 +9,11 @@ function NFTStorageSlot() {
 
 NFTStorageSlot.prototype.getOwnerSlot = function (owner_slot_type, owner_slot_index, tokenId) {
   if (owner_slot_type == 1) {
-    return calculateMappingSlot(tokenId, owner_slot_index);
+    return this.calculateMappingSlot(tokenId, owner_slot_index);
   } else if (owner_slot_type == 2) {
-    return calculateERC721AStorageSlot(tokenId, owner_slot_index);
+    return this.calculateERC721AStorageSlot(tokenId, owner_slot_index);
   } else if (owner_slot_type == 3) {
-    return calculateDynamicArraySlot(tokenId, owner_slot_index);
+    return this.calculateDynamicArraySlot(tokenId, owner_slot_index);
   } else {
     throw "Invalid slot type";
   }
