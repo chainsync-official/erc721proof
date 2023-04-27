@@ -46,6 +46,7 @@ async function main() {
             tokenId: eventdata.returnValues.tokenId,
           });
         }
+        updateMirrorChain(mirrorChain.chainId, { lastSyncBlock: eventdata.blockNumber });
       })
       .on("error", function (error, receipt) {
         console.log(error);
