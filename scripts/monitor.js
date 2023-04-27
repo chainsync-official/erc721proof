@@ -6,6 +6,8 @@ const {
   InsertMirrorNFT,
   batchInsertMirrorCollections,
   batchInsertMirrorNFTs,
+  getMirrorChains,
+  updateMirrorChain,
 } = require("../src/dbmysql");
 require("dotenv").config();
 
@@ -55,12 +57,13 @@ async function main() {
     );
     contract
       .getPastEvents("allEvents", {
-        fromBlock: 0,
+        fromBlock: mirrorChain.lastSyncBlockre,
         toBlock: "latest",
       })
       .then(function (events) {
         const collections = [];
         const nfts = [];
+        let lastSyncBlock;
         for (const eventdata of events) {
           if (eventdata.event == "MirrorCollectionDeployed") {
             collections.push({
@@ -78,6 +81,7 @@ async function main() {
               tokenId: eventdata.returnValues.tokenId,
             });
           }
+          lastSyncBlock = eventdata.blockNumber;
         }
         if (collections.length > 0) {
           batchInsertMirrorCollections(collections);
@@ -85,19 +89,9 @@ async function main() {
         if (nfts.length > 0) {
           batchInsertMirrorNFTs(nfts);
         }
+        updateMirrorChain(mirrorChain.chainId, { lastSyncBlock: lastSyncBlock });
       });
   }
-}
-
-async function getMirrorChains() {
-  const options = {
-    method: "GET",
-    url: "https://nftdataapi.chainsync.network/api/mirrorChains",
-    headers: { accept: "application/json" },
-  };
-
-  const data = await axios.request(options);
-  return data.data.data;
 }
 
 main().catch((err) => {

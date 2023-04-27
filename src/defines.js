@@ -138,8 +138,8 @@ const MirrorNFTs = sequelize.define(
   }
 );
 
-const MirrorChainStatus = sequelize.define(
-  "mirrorChainStatus",
+const MirrorChains = sequelize.define(
+  "mirrorChains",
   {
     chainId: {
       type: DataTypes.INTEGER,
@@ -167,5 +167,5 @@ module.exports = {
   NFTConfig,
   MirrorCollections,
   MirrorNFTs,
-  MirrorChainStatus,
+  MirrorChains,
 };

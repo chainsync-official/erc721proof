@@ -6,6 +6,7 @@ const {
   NFTConfig,
   MirrorCollections,
   MirrorNFTs,
+  MirrorChains,
 } = require("./defines");
 
 const sequelize = getDB();
@@ -211,6 +212,14 @@ const getMirrorChain = async (chainId) => {
   return res[0];
 };
 
+const updateMirrorChain = async (chainId, data) => {
+  return await MirrorChains.update(data, {
+    where: {
+      chainId: chainId,
+    },
+  });
+};
+
 module.exports = {
   getWalletInfo,
   setWalletInfo,
@@ -229,4 +238,5 @@ module.exports = {
   InsertMirrorNFT,
   getMirrorChains,
   getMirrorChain,
+  updateMirrorChain,
 };
