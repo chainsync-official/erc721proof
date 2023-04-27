@@ -57,7 +57,7 @@ async function main() {
     );
     contract
       .getPastEvents("allEvents", {
-        fromBlock: mirrorChain.lastSyncBlockre,
+        fromBlock: mirrorChain.lastSyncBlock,
         toBlock: "latest",
       })
       .then(function (events) {
