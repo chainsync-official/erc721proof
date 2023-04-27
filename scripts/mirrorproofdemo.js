@@ -7,12 +7,13 @@ const NFTStorageSlot = require("../src/NFTStorageSlot");
 const nftStorageSlot = new NFTStorageSlot();
 require("dotenv").config();
 
+console.log(process.env.WEB3_PROVIDER);
 const web3 = new Web3(process.env.WEB3_PROVIDER);
 
 async function main() {
-  const tokenId = 930;
-  const tokenId1 = 931;
-  const contract = "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7";
+  const tokenId = 3;
+  const tokenId1 = 5;
+  const contract = "0x34d85c9cdeb23fa97cb08333b511ac86e1c4e258";
 
   const stateRootData = await getStateRoot(1);
   const nftconfig = await getNFTConfig(1, contract);
