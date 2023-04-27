@@ -27,23 +27,23 @@ async function main() {
   }
 }
 
-async function getCollectionSlot(element) {
-  const exist = await getContractData(chain_id, element.contract_address);
+async function getCollectionSlot(contract_address) {
+  const exist = await getContractData(chain_id, contract_address);
   if (exist && exist.owner_slot_type != 0) {
     // && exist.owner_slot_type != 0
-    console.log(element.contract_address + " exist");
-    return;
+    console.log(contract_address + " exist");
+    // return;
   }
 
-  let data = await getCollectionExistToken(element.contract_address);
+  let data = await getCollectionExistToken(contract_address);
   if (!data) {
-    console.log(element.contract_address + " no data");
+    console.log(contract_address + " no data");
     return;
   }
 
   let owner = data.to;
   if (!owner) {
-    const contract = new web3.eth.Contract(erc721abi, element.contract_address);
+    const contract = new web3.eth.Contract(erc721abi, contract_address);
     owner = await contract.methods.ownerOf(data.tokenID).call();
   }
   owner = owner.toLowerCase();
@@ -51,22 +51,18 @@ async function getCollectionSlot(element) {
   const tokenId = web3.utils.toBN(data.tokenID);
 
   console.log(
-    `Begin to find owner slot mapping position for contract address: ${element.contract_address}, Token ID: ${tokenId}, Owner: ${owner}`
+    `Begin to find owner slot mapping position for contract address: ${contract_address}, Token ID: ${tokenId}, Owner: ${owner}`
   );
 
   let owner_slot_type = 1;
   let ownerslot = null;
   try {
-    ownerslot = await nftStorageSlotFinder.findSlotInMapping(
-      element.contract_address,
-      tokenId,
-      owner
-    );
+    ownerslot = await nftStorageSlotFinder.findSlotInMapping(contract_address, tokenId, owner);
 
     if (ownerslot === null) {
       owner_slot_type = 2;
       ownerslot = await nftStorageSlotFinder.findSlotInDynamicArray(
-        element.contract_address,
+        contract_address,
         tokenId,
         owner
       );
@@ -75,25 +71,23 @@ async function getCollectionSlot(element) {
     if (ownerslot === null) {
       owner_slot_type = 3;
       ownerslot = await nftStorageSlotFinder.findSlotInERC721AStorage(
-        element.contract_address,
+        contract_address,
         tokenId,
         owner
       );
     }
   } catch (error) {
     console.log(error);
-    console.log("contract: " + element.contract_address + " find slot error " + error);
+    console.log("contract: " + contract_address + " find slot error " + error);
   }
 
   if (ownerslot === null) {
     owner_slot_type = 0;
-    console.log(
-      `Could not find mapping position for contract address: ${element.contract_address}`
-    );
+    console.log(`Could not find mapping position for contract address: ${contract_address}`);
   } else {
     console.log(
       "found nft contract: " +
-        element.contract_address +
+        contract_address +
         " owner slot type: " +
         owner_slot_type +
         " found pos: " +
@@ -106,7 +100,7 @@ async function getCollectionSlot(element) {
   if (!exist) {
     await insertErc721Contract(
       chain_id,
-      element.contract_address,
+      contract_address,
       data.tokenName,
       data.tokenSymbol,
       owner_slot_type,
@@ -117,7 +111,7 @@ async function getCollectionSlot(element) {
     exist.owner_slot_type = owner_slot_type;
     exist.owner_slot_index = ownerslot.owner_slot_index;
     exist.owner_unpack_type = ownerslot.owner_unpack_type;
-    updateContractData(chain_id, element.contract_address, exist);
+    updateContractData(chain_id, contract_address, exist);
   }
 }
 
@@ -223,7 +217,12 @@ async function getCollectionExistTokenFromNFTPORT(contract_address) {
   return res;
 }
 
-main().catch((error) => {
+// main().catch((error) => {
+//   console.error(error);
+//   process.exitCode = 1;
+// });
+
+getCollectionSlot("0x29ec6f235b1d7cb6ab501ae8e5428974baf90e56").catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });

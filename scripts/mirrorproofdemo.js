@@ -11,9 +11,10 @@ console.log(process.env.WEB3_PROVIDER);
 const web3 = new Web3(process.env.WEB3_PROVIDER);
 
 async function main() {
-  const tokenId = 3;
-  const tokenId1 = 5;
-  const contract = "0x34d85c9cdeb23fa97cb08333b511ac86e1c4e258";
+  const tokenId = 15;
+  const tokenId1 = 16;
+  const tokenId2 = 17;
+  const contract = "0x29ec6f235b1d7cb6ab501ae8e5428974baf90e56";
 
   const stateRootData = await getStateRoot(1);
   const nftconfig = await getNFTConfig(1, contract);
@@ -23,6 +24,7 @@ async function main() {
     [
       nftStorageSlot.getOwnerSlot(nftconfig.owner_slot_type, nftconfig.owner_slot_index, tokenId),
       nftStorageSlot.getOwnerSlot(nftconfig.owner_slot_type, nftconfig.owner_slot_index, tokenId1),
+      nftStorageSlot.getOwnerSlot(nftconfig.owner_slot_type, nftconfig.owner_slot_index, tokenId2),
     ],
     stateRootData.block_number
   );
@@ -50,11 +52,12 @@ async function main() {
       nftconfig.owner_slot_index,
       nftconfig.owner_unpack_type,
     ],
-    [tokenId, tokenId1],
+    [tokenId, tokenId1, tokenId2],
     [
       bufferToHex(ethers.utils.concat(proof.accountProof)),
       bufferToHex(ethers.utils.concat(proof.storageProof[0].proof)),
       bufferToHex(ethers.utils.concat(proof.storageProof[1].proof)),
+      bufferToHex(ethers.utils.concat(proof.storageProof[2].proof)),
     ],
   ];
   console.log(params);

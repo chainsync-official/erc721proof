@@ -16,6 +16,9 @@ const mirrorerc721factoryabi = require("../abi/MirrorERC721Factory.json");
 async function main() {
   const mirrorChains = await getMirrorChains();
   for (const mirrorChain of mirrorChains) {
+    if (mirrorChain.mirrorFactoryContract.length == 0) {
+      continue;
+    }
     const web3ws = new Web3(configs[mirrorChain.chainId].WS_RPC_URL);
     const contractws = new web3ws.eth.Contract(
       mirrorerc721factoryabi,
