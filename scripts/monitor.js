@@ -32,18 +32,26 @@ async function main() {
       .on("data", function (event) {
         if (eventdata.event == "MirrorCollectionDeployed") {
           InsertMirrorCllection({
-            chainId: eventdata.returnValues.chain_id,
-            contract: eventdata.returnValues.token,
-            mirrorChainId: mirrorChain.chainId,
-            mirrorContract: eventdata.returnValues.mirrorToken,
+            where: {
+              chainId: eventdata.returnValues.chain_id,
+              contract: eventdata.returnValues.token,
+            },
+            defaults: {
+              mirrorChainId: mirrorChain.chainId,
+              mirrorContract: eventdata.returnValues.mirrorToken,
+            },
           });
         } else if (eventdata.event == "MirrorNFTClaimed") {
           InsertMirrorNFT({
-            chainId: eventdata.returnValues.chain_id,
-            contract: eventdata.returnValues.token,
-            mirrorChainId: mirrorChain.chainId,
-            mirrorContract: eventdata.returnValues.mirrorToken,
-            tokenId: eventdata.returnValues.tokenId,
+            where: {
+              chainId: eventdata.returnValues.chain_id,
+              contract: eventdata.returnValues.token,
+              tokenId: eventdata.returnValues.tokenId,
+            },
+            defaults: {
+              mirrorChainId: mirrorChain.chainId,
+              mirrorContract: eventdata.returnValues.mirrorToken,
+            },
           });
         }
         updateMirrorChain(mirrorChain.chainId, { lastSyncBlock: eventdata.blockNumber });
@@ -65,33 +73,33 @@ async function main() {
         toBlock: "latest",
       })
       .then(function (events) {
-        const collections = [];
-        const nfts = [];
         let lastSyncBlock;
         for (const eventdata of events) {
           if (eventdata.event == "MirrorCollectionDeployed") {
-            collections.push({
-              chainId: eventdata.returnValues.chain_id,
-              contract: eventdata.returnValues.token,
-              mirrorChainId: mirrorChain.chainId,
-              mirrorContract: eventdata.returnValues.mirrorToken,
+            InsertMirrorCllection({
+              where: {
+                chainId: eventdata.returnValues.chain_id,
+                contract: eventdata.returnValues.token,
+              },
+              defaults: {
+                mirrorChainId: mirrorChain.chainId,
+                mirrorContract: eventdata.returnValues.mirrorToken,
+              },
             });
           } else if (eventdata.event == "MirrorNFTClaimed") {
-            nfts.push({
-              chainId: eventdata.returnValues.chain_id,
-              contract: eventdata.returnValues.token,
-              mirrorChainId: mirrorChain.chainId,
-              mirrorContract: eventdata.returnValues.mirrorToken,
-              tokenId: eventdata.returnValues.tokenId,
+            InsertMirrorNFT({
+              where: {
+                chainId: eventdata.returnValues.chain_id,
+                contract: eventdata.returnValues.token,
+                tokenId: eventdata.returnValues.tokenId,
+              },
+              defaults: {
+                mirrorChainId: mirrorChain.chainId,
+                mirrorContract: eventdata.returnValues.mirrorToken,
+              },
             });
           }
           lastSyncBlock = eventdata.blockNumber;
-        }
-        if (collections.length > 0) {
-          batchInsertMirrorCollections(collections);
-        }
-        if (nfts.length > 0) {
-          batchInsertMirrorNFTs(nfts);
         }
         updateMirrorChain(mirrorChain.chainId, { lastSyncBlock: lastSyncBlock });
       });

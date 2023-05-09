@@ -183,7 +183,7 @@ const batchInsertMirrorCollections = async (mirrorCollections) => {
 };
 
 const InsertMirrorCllection = async (mirrorCollection) => {
-  await MirrorCollections.create(mirrorCollection);
+  await MirrorCollections.findOrCreate(mirrorCollection);
 };
 
 const batchInsertMirrorNFTs = async (mirrorNFTs) => {
@@ -191,7 +191,7 @@ const batchInsertMirrorNFTs = async (mirrorNFTs) => {
 };
 
 const InsertMirrorNFT = async (mirrorNFT) => {
-  await MirrorNFTs.create(mirrorNFT);
+  await MirrorNFTs.findOrCreate(mirrorNFT);
 };
 
 const getMirrorChains = async () => {
