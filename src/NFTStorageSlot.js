@@ -28,22 +28,15 @@ NFTStorageSlot.prototype.calculateMappingSlot = function (tokenId, mappingSlot) 
 };
 
 NFTStorageSlot.prototype.calculateERC721AStorageSlot = function (tokenId, mappingSlot) {
-  const baseStorageSlot = this.web3.utils.soliditySha3("ERC721A.contracts.storage.ERC721A");
-  const packedOwnershipsSlot = this.web3.utils.soliditySha3(
-    { type: "uint256", value: mappingSlot },
-    { type: "bytes32", value: baseStorageSlot }
-  );
-  return this.web3.utils.soliditySha3(
-    { type: "uint256", value: tokenId },
-    { type: "bytes32", value: packedOwnershipsSlot }
-  );
+  let baseStorageSlot = this.web3.utils.keccak256("ERC721A.contracts.storage.ERC721A");
+  baseStorageSlot = this.web3.utils.toBN(baseStorageSlot).add(this.web3.utils.toBN(mappingSlot));
+  return this.calculateMappingSlot(tokenId, baseStorageSlot);
 };
 
 NFTStorageSlot.prototype.calculateDynamicArraySlot = function (tokenId, arrayPosition) {
   const firstElementSlot = this.web3.utils.keccak256(
     this.web3.utils.padLeft(this.web3.utils.toHex(arrayPosition), 64)
   );
-
   return this.web3.utils.toHex(this.web3.utils.toBN(firstElementSlot).add(tokenId));
 };
 

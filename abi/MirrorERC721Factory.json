@@ -201,11 +201,52 @@
         "inputs": [
             {
                 "internalType": "uint256",
+                "name": "chainId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "collectionContract",
+                "type": "address"
+            }
+        ],
+        "name": "getMirrorData",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "uint256",
+                        "name": "chain_id",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "token",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "mirrorToken",
+                        "type": "address"
+                    }
+                ],
+                "internalType": "struct IMirrorERC721Factory.NFTData",
+                "name": "",
+                "type": "tuple"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
                 "name": "mirrorId",
                 "type": "uint256"
             }
         ],
-        "name": "getMirrorData",
+        "name": "getMirrorDataById",
         "outputs": [
             {
                 "components": [

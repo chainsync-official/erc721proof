@@ -217,12 +217,7 @@ async function getCollectionExistTokenFromNFTPORT(contract_address) {
   return res;
 }
 
-// main().catch((error) => {
-//   console.error(error);
-//   process.exitCode = 1;
-// });
-
-getCollectionSlot("0x29ec6f235b1d7cb6ab501ae8e5428974baf90e56").catch((error) => {
+main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
