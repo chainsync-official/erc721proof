@@ -35,9 +35,9 @@ async function main() {
             where: {
               chainId: eventdata.returnValues.chain_id,
               contract: eventdata.returnValues.token,
+              mirrorChainId: mirrorChain.chainId,
             },
             defaults: {
-              mirrorChainId: mirrorChain.chainId,
               mirrorContract: eventdata.returnValues.mirrorToken,
             },
           });
@@ -47,9 +47,9 @@ async function main() {
               chainId: eventdata.returnValues.chain_id,
               contract: eventdata.returnValues.token,
               tokenId: eventdata.returnValues.tokenId,
+              mirrorChainId: mirrorChain.chainId,
             },
             defaults: {
-              mirrorChainId: mirrorChain.chainId,
               mirrorContract: eventdata.returnValues.mirrorToken,
             },
           });
@@ -80,9 +80,9 @@ async function main() {
               where: {
                 chainId: eventdata.returnValues.chain_id,
                 contract: eventdata.returnValues.token,
+                mirrorChainId: mirrorChain.chainId,
               },
               defaults: {
-                mirrorChainId: mirrorChain.chainId,
                 mirrorContract: eventdata.returnValues.mirrorToken,
               },
             });
@@ -92,9 +92,9 @@ async function main() {
                 chainId: eventdata.returnValues.chain_id,
                 contract: eventdata.returnValues.token,
                 tokenId: eventdata.returnValues.tokenId,
+                mirrorChainId: mirrorChain.chainId,
               },
               defaults: {
-                mirrorChainId: mirrorChain.chainId,
                 mirrorContract: eventdata.returnValues.mirrorToken,
               },
             });
