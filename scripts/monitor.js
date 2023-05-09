@@ -29,7 +29,7 @@ async function main() {
       .on("connected", function (subscriptionId) {
         console.log("chain", mirrorChain.chainId, "rpc connected", subscriptionId);
       })
-      .on("data", function (event) {
+      .on("data", function (eventdata) {
         if (eventdata.event == "MirrorCollectionDeployed") {
           InsertMirrorCllection({
             where: {
