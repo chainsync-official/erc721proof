@@ -6,21 +6,25 @@ const axios = require("axios");
 const NFTStorageSlot = require("../src/NFTStorageSlot");
 const nftStorageSlot = new NFTStorageSlot();
 const configs = require("../config.json");
-const mirrorerc721factoryabi = require("../abi/MirrorERC721Factory.json");
+const NFTClaimValidatorAbi = require("../abi/NFTClaimValidator.json");
 require("dotenv").config();
 
-const web3 = new Web3(configs[1].RPC_URL);
-const web3mumbai = new Web3(configs[5].RPC_URL);
+const NFTClaimContract = "0x34CD3FF5B9AfDf5c77da8b714F4d2041322bDA1A";
 
-async function main() {
+const web3s = new Web3(configs[1].RPC_URL);
+
+const provider = new ethers.providers.JsonRpcProvider(configs[5].RPC_URL);
+const signer = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
+const nftClaimContract = new ethers.Contract(NFTClaimContract, NFTClaimValidatorAbi, signer);
+
+async function oneCollectionMulti() {
   const tokenId = 15;
-  const contract = "0x29ec6f235b1d7cb6ab501ae8e5428974baf90e56";
-  const mirrorCFactoryContract = "0xc9873e55e48b02e8f065e4334cc91166164ac688";
+  const contract = "0x1a92f7381b9f03921564a437210bb9396471050c";
 
   const stateRootData = await getStateRoot(1);
   const nftconfig = await getNFTConfig(1, contract);
 
-  const proof = await web3.eth.getProof(
+  const proof = await web3s.eth.getProof(
     contract,
     [
       nftStorageSlot.getOwnerSlot(nftconfig.owner_slot_type, nftconfig.owner_slot_index, tokenId),
@@ -34,16 +38,9 @@ async function main() {
         nftconfig.owner_slot_index,
         tokenId + 2
       ),
-      nftStorageSlot.getOwnerSlot(
-        nftconfig.owner_slot_type,
-        nftconfig.owner_slot_index,
-        tokenId + 3
-      ),
     ],
     stateRootData.block_number
   );
-
-  console.log(proof.storageProof);
 
   const stateMessage = abi.solidityPack(
     ["uint256", "uint256", "bytes32", "uint256"],
@@ -54,12 +51,7 @@ async function main() {
       stateRootData.timestamp,
     ]
   );
-
-  const mirrorERC721Factory = new web3mumbai.eth.Contract(
-    mirrorerc721factoryabi,
-    mirrorCFactoryContract
-  );
-  const tx = await mirrorERC721Factory.methods.claimNFT(
+  const tx = await nftClaimContract.claimNFT(
     stateMessage,
     stateRootData.signature,
     [
@@ -72,35 +64,83 @@ async function main() {
       nftconfig.owner_slot_index,
       nftconfig.owner_unpack_type,
     ],
-    [tokenId, tokenId + 1],
+    [tokenId, tokenId + 1, tokenId + 2],
     [
       bufferToHex(ethers.utils.concat(proof.accountProof)),
       bufferToHex(ethers.utils.concat(proof.storageProof[0].proof)),
       bufferToHex(ethers.utils.concat(proof.storageProof[1].proof)),
+      bufferToHex(ethers.utils.concat(proof.storageProof[2].proof)),
     ]
   );
 
-  const accountFrom = {
-    privateKey: process.env.PRIVATE_KEY,
-  };
-  console.log(await tx.estimateGas());
-  console.log(await web3mumbai.eth.getGasPrice());
-  console.log(accountFrom);
-  const createTransaction = await web3mumbai.eth.accounts.signTransaction(
-    {
-      to: mirrorCFactoryContract,
-      data: tx.encodeABI(),
-      gas: 3000000,
-      gasPrice: 1000000000,
-    },
-    accountFrom.privateKey
-  );
+  console.log(tx);
 
-  // Send Tx and Wait for Receipt
-  const createReceipt = await web3mumbai.eth.sendSignedTransaction(
-    createTransaction.rawTransaction
-  );
-  console.log(createReceipt);
+  const receipt = await tx.wait();
+  console.log(receipt);
+}
+
+async function multiCollectionMulti() {
+  const tokenId = 20;
+  const contracts = [
+    "0x1a92f7381b9f03921564a437210bb9396471050c",
+    "0x60e4d786628fea6478f785a6d7e704777c86a7c6",
+    "0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
+  ];
+
+  const stateRootData = await getStateRoot(1);
+
+  const params = [];
+  for (const contract of contracts) {
+    const nftconfig = await getNFTConfig(1, contract);
+
+    const proof = await web3s.eth.getProof(
+      contract,
+      [
+        nftStorageSlot.getOwnerSlot(nftconfig.owner_slot_type, nftconfig.owner_slot_index, tokenId),
+        nftStorageSlot.getOwnerSlot(
+          nftconfig.owner_slot_type,
+          nftconfig.owner_slot_index,
+          tokenId + 1
+        ),
+      ],
+      stateRootData.block_number
+    );
+
+    const stateMessage = abi.solidityPack(
+      ["uint256", "uint256", "bytes32", "uint256"],
+      [
+        stateRootData.chain_id,
+        stateRootData.block_number,
+        stateRootData.state_root,
+        stateRootData.timestamp,
+      ]
+    );
+    params.push(
+      nftClaimContract.interface.encodeFunctionData("claimNFT", [
+        stateMessage,
+        stateRootData.signature,
+        [
+          nftconfig.proof,
+          nftconfig.chainId,
+          nftconfig.contract,
+          nftconfig.name,
+          nftconfig.symbol,
+          nftconfig.owner_slot_type,
+          nftconfig.owner_slot_index,
+          nftconfig.owner_unpack_type,
+        ],
+        [tokenId, tokenId + 1],
+        [
+          bufferToHex(ethers.utils.concat(proof.accountProof)),
+          bufferToHex(ethers.utils.concat(proof.storageProof[0].proof)),
+          bufferToHex(ethers.utils.concat(proof.storageProof[1].proof)),
+        ],
+      ])
+    );
+  }
+  const tx = await nftClaimContract.multicall(params);
+  const receipt = await tx.wait();
+  console.log(receipt);
 }
 
 async function getStateRoot(chainId) {
@@ -125,6 +165,10 @@ async function getNFTConfig(chainId, contract) {
   return data.data.data;
 }
 
-main().catch((err) => {
+oneCollectionMulti().catch((err) => {
+  console.log(err);
+});
+
+multiCollectionMulti().catch((err) => {
   console.log(err);
 });
