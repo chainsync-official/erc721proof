@@ -11,17 +11,18 @@ const { insertErc721Contract, getContractData, updateContractData } = require(".
 const address0 = "0x0000000000000000000000000000000000000000";
 
 async function main() {
-  let page = 1;
+  let page = 45;
   while (true) {
     console.log(page, "start");
     const cs = await getCollections(page);
     if (cs.length == 0) {
       break;
     }
+
     for (let i = 0; i < cs.length; i++) {
       const contract = cs[i];
 
-      await getCollectionSlot(contract);
+      await getCollectionSlot(contract.contract_address);
     }
     page++;
   }

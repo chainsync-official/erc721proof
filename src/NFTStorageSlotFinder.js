@@ -12,20 +12,15 @@ function NFTStorageSlotFinder(web3Instance) {
   this.web3 = web3Instance;
 }
 
-NFTStorageSlotFinder.prototype.getCollectionSlot = async function (contract_address) {
-  let data = await this.getCollectionExistToken(contract_address);
+NFTStorageSlotFinder.prototype.getCollectionSlot = async function (chainId, contract_address) {
+  let data = await this.getCollectionExistToken(chainId, contract_address);
   let owner = null;
   if (!data) {
-    const contract = new this.web3.eth.Contract(erc721abi, contract_address);
-    owner = await contract.methods.ownerOf(1).call();
-    if (owner == address0) {
-      console.log(contract_address + " owner is 0x0");
-      return;
-    }
-  } else {
-    owner = data.to;
+    console.log(contract_address + " data empty");
+    return;
   }
 
+  owner = data.to;
   owner = owner.toLowerCase();
 
   const tokenId = this.web3.utils.toBN(data.tokenID);
@@ -34,40 +29,46 @@ NFTStorageSlotFinder.prototype.getCollectionSlot = async function (contract_addr
     `Begin to find owner slot mapping position for contract address: ${contract_address}, Token ID: ${tokenId}, Owner: ${owner}`
   );
 
-  let owner_slot_type = 1;
-  let ownerslot = null;
+  const res = {
+    tokenName: data.tokenName,
+    tokenSymbol: data.tokenSymbol,
+    owner_slot_type: 1,
+    ownerslot: null,
+  };
   try {
-    ownerslot = await this.findSlotInMapping(contract_address, tokenId, owner);
+    res.ownerslot = await this.findSlotInMapping(contract_address, tokenId, owner);
 
-    if (ownerslot === null) {
-      owner_slot_type = 2;
-      ownerslot = await this.findSlotInDynamicArray(contract_address, tokenId, owner);
+    if (res.ownerslot === null) {
+      res.owner_slot_type = 2;
+      res.ownerslot = await this.findSlotInDynamicArray(contract_address, tokenId, owner);
     }
 
-    if (ownerslot === null) {
-      owner_slot_type = 3;
-      ownerslot = await this.findSlotInERC721AStorage(contract_address, tokenId, owner);
+    if (res.ownerslot === null) {
+      res.owner_slot_type = 3;
+      res.ownerslot = await this.findSlotInERC721AStorage(contract_address, tokenId, owner);
     }
   } catch (error) {
     console.log(error);
     console.log("contract: " + contract_address + " find slot error " + error);
+    return null;
   }
 
-  if (ownerslot === null) {
-    owner_slot_type = 0;
+  if (res.ownerslot === null) {
+    res.owner_slot_type = 0;
     console.log(`Could not find mapping position for contract address: ${contract_address}`);
   } else {
     console.log(
       "found nft contract: " +
         contract_address +
         " owner slot type: " +
-        owner_slot_type +
+        res.owner_slot_type +
         " found pos: " +
-        ownerslot.owner_slot_index +
+        res.ownerslot.owner_slot_index +
         " unpack type:" +
-        ownerslot.owner_unpack_type
+        res.ownerslot.owner_unpack_type
     );
   }
+  return res;
 };
 
 NFTStorageSlotFinder.prototype.findSlotInMapping = async function (
@@ -134,10 +135,26 @@ NFTStorageSlotFinder.prototype.processStorageProof = function (proofs, owner) {
   return null;
 };
 
-NFTStorageSlotFinder.prototype.getCollectionExistToken = async function (contract_address) {
+NFTStorageSlotFinder.prototype.getCollectionExistToken = async function (
+  chainId,
+  contract_address
+) {
+  let url;
+  let apikey;
+  if (chainId == 1) {
+    url = "https://api.etherscan.io/api";
+    apikey = process.env.ETHERSCAN_API_KEY;
+  } else if (chainId == 137) {
+    url = "https://api.polygonscan.com/api";
+    apikey = process.env.POLYSCAN_API_KEY;
+  } else {
+    console.log("none support chainID", chainId);
+    return null;
+  }
+
   const options = {
     method: "GET",
-    url: "https://api.etherscan.io/api",
+    url: url,
     params: {
       module: "account",
       action: "tokennfttx",
@@ -147,7 +164,7 @@ NFTStorageSlotFinder.prototype.getCollectionExistToken = async function (contrac
       startblock: "0",
       endblock: "99999999",
       sort: "desc",
-      apikey: process.env.ETHERSCAN_API_KEY,
+      apikey: apikey,
     },
   };
 
